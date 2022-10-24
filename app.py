@@ -56,5 +56,13 @@ def create_book():
     books.append(new_book)
     return jsonify(books)
 
+@app.route('/books/<int:id>', methods = ['DELETE'])
+def delete_book(id):
+    # verificando a posicao e o livro
+    for index, book in enumerate(books):
+        if book.get('id') == id:
+            del books[index]
+    return jsonify(books)
+
 #run app
 app.run(port=5000, host='localhost', debug=True)
