@@ -23,12 +23,17 @@ books = [
 ]
 
 #definindo a rota
-@app.route('/books')
-def get_livros():
+@app.route('/books', methods = ['GET'])
+def get_books():
     """ returns all books """
     return jsonify(books)
 
-
+@app.route('/books/<int:id>', methods = ['GET'])
+# get books by id
+def get_books_by_id(id):
+    for book in books:
+        if book.get('id') == id:
+            return jsonify(book)
 
 #run app
 app.run(port=5000, host='localhost', debug=True)
