@@ -10,7 +10,7 @@ https://localhost/livros
 - localhost/livros/id [GET] - Retorna um livro especificado por ID
 - localhost/livros/id [POST] - Insere um livro especificado por ID (ainda manual)
 - localhost/livros/id [PUT] - Atualizar informações de um livro especificado por ID
-- localhost/livros/id [DELET] - Remove um livro especificado por ID
+- localhost/livros/id [DELETE] - Remove um livro especificado por ID
 
 ## Resources
 Livros - qualquer livro disponibilizado
