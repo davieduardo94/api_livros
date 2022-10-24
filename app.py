@@ -42,9 +42,19 @@ def update_book_by_id(id):
     # requisicao enviada pelo usuario para API
     book_updated = request.get_json()
     for index, book in enumerate(books):
+        # verificando se o id é igual ao livro atual
         if book.get('id') == id:
+            # atualizando o dicionario com base no index
             books[index] = book_updated
+            # retornando o livro atualizado na lista
             return jsonify(books[index])
+        
+@app.route('/books', methods = ['POST'])
+def create_book():
+    """ inserts book in list """
+    new_book = request.get_json()
+    books.append(new_book)
+    return jsonify(books)
 
 #run app
 app.run(port=5000, host='localhost', debug=True)
