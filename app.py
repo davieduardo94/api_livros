@@ -29,11 +29,22 @@ def get_books():
     return jsonify(books)
 
 @app.route('/books/<int:id>', methods = ['GET'])
-# get books by id
-def get_books_by_id(id):
+# get book by id
+def get_book_by_id(id):
+    """ get book by id"""
     for book in books:
         if book.get('id') == id:
             return jsonify(book)
+
+@app.route('/books/<int:id>', methods = ['PUT'])
+def update_book_by_id(id):
+    """ updates book by id """
+    # requisicao enviada pelo usuario para API
+    book_updated = request.get_json()
+    for index, book in enumerate(books):
+        if book.get('id') == id:
+            books[index] = book_updated
+            return jsonify(books[index])
 
 #run app
 app.run(port=5000, host='localhost', debug=True)
