@@ -23,6 +23,11 @@ books = [
     },
 ]
 
+# definindo o index
+@app.route('/', methods = ['GET'])
+def index():
+    return './readm.md'
+
 #definindo a rota
 @app.route('/books', methods = ['GET'])
 def get_books():
