@@ -1,3 +1,4 @@
+import os
 from flask import Flask,jsonify, request
 
 # criando o aplicativo Flask
@@ -64,5 +65,11 @@ def delete_book(id):
             del books[index]
     return jsonify(books)
 
-#run app
-app.run(port=5000, host='localhost', debug=True)
+#implemented for heroku
+def main():
+    port = int(os.environ.get('PORT', 5000))
+    #run app
+    app.run(port=port, host='0.0.0.0')
+
+if __name__ == '__main__':
+    main()
