@@ -1,5 +1,5 @@
 import os
-from flask import Flask,jsonify, request
+from flask import Flask,jsonify, render_template, request
 
 # criando o aplicativo Flask
 app = Flask(__name__)
@@ -26,7 +26,7 @@ books = [
 # definindo o index
 @app.route('/', methods = ['GET'])
 def index():
-    return './readm.md'
+    return render_template('readme.md')
 
 #definindo a rota
 @app.route('/books', methods = ['GET'])
