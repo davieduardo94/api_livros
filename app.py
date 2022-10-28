@@ -1,5 +1,5 @@
 import os
-from flask import Flask,jsonify, render_template, render_template_string, request
+from flask import Flask,jsonify, render_template, request
 
 # criando o aplicativo Flask
 app = Flask(__name__)
@@ -27,6 +27,11 @@ books = [
 @app.route('/', methods = ['GET'])
 def index():
     return render_template('index.html')
+
+#pagina endpoints
+@app.route('/endpoints', methods = ['GET'])
+def endpoints():
+    return render_template('endpoints.html')
     
 
 #definindo a rota
