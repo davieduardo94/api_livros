@@ -1,41 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <!--
-       adicionando o CSS utilando funcao interna 'url_for('nome_pasta', filename = 'pasta\nome_arquivo')' onde:
-       'nome_pasta' = o local onde estão os arquivos estaticos
-       'filename' = nome do arquivo que estou importando para pagina
-      -->
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
-    <title>API Books</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">API</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
-            </li>
-            <li class="nav-item">
-              <!-- 
-                Aqui estou utilizando "url_for('nome_funcao')" onde:
-                'nome_funcao' = função definida em app.py com o mesmo nome e rota.
-              -->
-              <a class="nav-link" href="{{url_for('endpoints')}}">Endpoints</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    
+<!--
+  Aqui estou utilizando o template base.html como estrutura geral das paginas
+-->
+{% extends 'base.html' %}   
+{% block title %} Welcome to FlaskBlog {% endblock %}
+{% block content %}
       <div class="jumbotron container content">
         <h1 class="display-4">Olá!</h1>
         <p class="lead">Esta API foi desenvolvida utilizando Python e Flask.</p>
@@ -48,11 +16,4 @@
         <p class="lead">Pagina de ENDPOINTS em construção!</p>
 
       </div>
-
-    <!-- JavaScript (Opcional) -->
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
-</html>
+{% endblock %}

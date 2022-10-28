@@ -1,12 +1,21 @@
-<div class="container"> 
-    <h1> Olá Mundo! </h1>
+<!--
+  Aqui estou utilizando o template base.html como estrutura geral das paginas
+-->
+{% extends 'base.html' %}   
+{% block title %} Endpoints list {% endblock %}
+{% block content %}
+<div class="container jumbotron"> 
+    <h2> Veja aqui a lista de métodos aceitos! </h2>
+    <hr class="my-3">
     <h4>Retorna uma lista de livros</h4>
-    <blockquote><span class="badge badge-pill badge-secondary">GET</span> /books </blockquote>
+    <blockquote><span class="badge badge-pill badge-info">GET</span> /books </blockquote>
     <h4>Retorna um livro especificado por ID</h4>
-    <blockquote><span class="badge badge-pill badge-secondary">GET</span> /books/int:id </blockquote>
+    <blockquote><span class="badge badge-pill badge-info">GET</span> /books/int:id </blockquote>
     <h4>Insere um livro especificado por ID</h4>
     <blockquote><span class="badge badge-pill badge-secondary">POST</span> /books/int:id </blockquote>
     <h4>Atualizar informações de um livro especificado por ID</h4>
-    <blockquote><span class="badge badge-pill badge-secondary">PUT</span> /books/int:id </blockquote>
-    <blockquote><span class="badge badge-pill badge-secondary">DELETE</span> /books/int:id </blockquote>
+    <blockquote><span class="badge badge-pill badge-dark">PUT</span> /books/int:id </blockquote>
+    <h4>Remover um livro especificado por ID</h4>
+    <blockquote><span class="badge badge-pill badge-danger">DELETE</span> /books/int:id </blockquote>
 </div>
+{% endblock %}
