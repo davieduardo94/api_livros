@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Olá, mundo!</title>
+    <!--
+       adicionando o CSS utilando funcao interna 'url_for('nome_pasta', filename = 'pasta\nome_arquivo')' onde:
+       'nome_pasta' = o local onde estão os arquivos estaticos
+       'filename' = nome do arquivo que estou importando para pagina
+      -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+    <title>API Books</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,20 +26,26 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="\endpoints.html">Endpoints</a>
+              <!-- 
+                Aqui estou utilizando "url_for('nome_funcao')" onde:
+                'nome_funcao' = função definida em app.py com o mesmo nome e rota.
+              -->
+              <a class="nav-link" href="{{url_for('endpoints')}}">Endpoints</a>
             </li>
           </ul>
         </div>
       </nav>
     
-      <div class="jumbotron container">
+      <div class="jumbotron container content">
         <h1 class="display-4">Olá!</h1>
         <p class="lead">Esta API foi desenvolvida utilizando Python e Flask.</p>
-        <hr class="my-4">
-        <p>Deploy feito no Heroku.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
-        <hr class="my-4">
-        <p>Pagina de ENDPOINTS em construção!</p>
+        <hr class="my-1">
+        <p class="lead">Deploy feito no Heroku utilizando GitHub Actions.</p>
+        <!-- <a class="btn btn-primary btn-lg" href="https://www.heroku.com/" role="button">Leia mais</a> -->
+        <hr class="my-1">
+        <p class="lead">Pagina construída com HTML/CSS e Bootstrap.</p>
+        <hr class="my-1">
+        <p class="lead">Pagina de ENDPOINTS em construção!</p>
 
       </div>
 
