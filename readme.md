@@ -3,7 +3,7 @@
 * Criar uma API que disponibiliza a consulta [GET], criação[POST], edição[PUT] e exclusão[DELETE] de livros.
 ## URL base
 ~~~html
-https://localhost/livros
+../livros
 ~~~ 
 ## Endpoints
 - localhost/livros [GET] - Retorna uma lista de livros
