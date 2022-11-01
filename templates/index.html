@@ -2,10 +2,10 @@
   Aqui estou utilizando o template base.html como estrutura geral das paginas
 -->
 {% extends 'base.html' %}   
-{% block title %} Welcome to FlaskBlog {% endblock %}
+{% block title %} Welcome to API Book {% endblock %}
 {% block content %}
       <div class="jumbotron container content">
-        <h1 class="display-4">Olá!</h1>
+        <h1 class="display-4">Bem vindo a API de Livros!</h1>
         <p class="lead">Esta API foi desenvolvida utilizando Python e Flask.</p>
         <hr class="my-1">
         <p class="lead">Deploy feito no Heroku utilizando GitHub Actions.</p>
@@ -13,7 +13,6 @@
         <hr class="my-1">
         <p class="lead">Pagina construída com HTML/CSS e Bootstrap.</p>
         <hr class="my-1">
-        <p class="lead">Pagina de ENDPOINTS em construção!</p>
-
+        <a class="lead" href="{{url_for('endpoints')}}">Acesse aqui a lista de endpoints</a>
       </div>
 {% endblock %}
