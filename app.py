@@ -46,7 +46,9 @@ def get_book_by_id(id):
     """ get book by id"""
     for book in books:
         if book.get('id') == id:
-            return jsonify(book)
+             return jsonify(book)
+    else:
+        return render_template('not_found.html')
 
 @app.route('/books/<int:id>', methods = ['PUT'])
 def update_book_by_id(id):
@@ -81,6 +83,5 @@ def main():
     port = int(os.environ.get('PORT', 5000))
     #run app
     app.run(port=port, host='0.0.0.0', debug=True)
-
 if __name__ == '__main__':
     main()
