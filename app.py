@@ -1,5 +1,6 @@
 import os
 from flask import Flask,jsonify, render_template, request
+from pymongo import MongoClient
 
 # criando o aplicativo Flask
 app = Flask(__name__)
