@@ -4,9 +4,11 @@ from pymongo import MongoClient
 
 # criando o aplicativo Flask
 app = Flask(__name__)
-
-#fonte de dados
-books = [
+uri = "mongodb+srv://api_admin:<password>@apibook.ccjwtwq.mongodb.net/?retryWrites=true&w=majority"
+conn = MongoClient(uri)
+db = conn.apibook
+collection = db.books
+collection.insert_many([
     {
         'id': 1,
         'título': 'O Senhor dos Anéis - A Sociedade do Anel',
@@ -22,7 +24,25 @@ books = [
         'título': 'James Clear',
         'autor': 'Hábitos Atômicos'
     },
-]
+])
+#fonte de dados
+# books = [
+#     {
+#         'id': 1,
+#         'título': 'O Senhor dos Anéis - A Sociedade do Anel',
+#         'autor': 'J.R.R Tolkien'
+#     },
+#     {
+#         'id': 2,
+#         'título': 'Harry Potter e a Pedra Filosofal',
+#         'autor': 'J.K Howling'
+#     },
+#     {
+#         'id': 3,
+#         'título': 'James Clear',
+#         'autor': 'Hábitos Atômicos'
+#     },
+# ]
 
 # definindo o index
 @app.route('/', methods = ['GET'])
